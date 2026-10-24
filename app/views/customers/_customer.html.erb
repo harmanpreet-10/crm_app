@@ -1,0 +1,17 @@
+<article class="customer-card">
+  <h2><%= customer.full_name %></h2>
+  <% if customer.image.attached? %>
+    <%= image_tag customer.image, alt: "Image of #{customer.full_name}", class: 'customer-photo' %>
+  <% else %>
+    <div class="photo-placeholder" role="img" aria-label="No customer image">No image</div>
+  <% end %>
+  <p><strong>Province:</strong> <%= customer.province.presence || 'Unknown' %></p>
+  <p><%= customer.phone_number.presence || 'No phone number' %></p>
+  <p class="email">
+    <% if customer.email_address.present? %>
+      <%= mail_to customer.email_address %>
+    <% else %>
+      <em>Email missing</em>
+    <% end %>
+  </p>
+</article>

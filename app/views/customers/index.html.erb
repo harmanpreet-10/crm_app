@@ -1,0 +1,16 @@
+<main class="container">
+  <nav class="navigation" aria-label="Customer filters">
+    <%= link_to 'All Customers', root_path %>
+    <%= link_to 'Alphabetized', customers_alphabetized_path %>
+<%= link_to 'Missing Email', customers_missing_email_path %>
+    <%= link_to 'Admin', admin_root_path %>
+  </nav>
+  <h1><%= @heading %></h1>
+  <% if @customers.any? %>
+    <section class="customer-grid">
+      <%= render partial: 'customer', collection: @customers %>
+    </section>
+  <% else %>
+    <p>No customers found.</p>
+  <% end %>
+</main>
