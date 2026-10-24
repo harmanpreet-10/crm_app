@@ -39,7 +39,7 @@ gem "kamal", require: false
 gem "thruster", require: false
 
 # Customer images
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 2.2"
 
 # Customer Relation Manager
 gem "activeadmin", "~> 3.5"
